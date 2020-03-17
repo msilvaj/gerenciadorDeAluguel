@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :refeicoes
+  resources :trefeicoes
   resources :dietas
   devise_for :usuarios
   resources :usuarios

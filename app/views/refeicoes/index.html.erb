@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Refeicoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Horario</th>
+      <th>Descricao</th>
+      <th>Trefeicao</th>
+      <th>Dieta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @refeicoes.each do |refeicao| %>
+      <tr>
+        <td><%= refeicao.horario %></td>
+        <td><%= refeicao.descricao %></td>
+        <td><%= refeicao.trefeicao %></td>
+        <td><%= refeicao.dieta %></td>
+        <td><%= link_to 'Show', refeicao %></td>
+        <td><%= link_to 'Edit', edit_refeicao_path(refeicao) %></td>
+        <td><%= link_to 'Destroy', refeicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Refeicao', new_refeicao_path %>

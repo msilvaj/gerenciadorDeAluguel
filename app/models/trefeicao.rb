@@ -1,0 +1,2 @@
+class Trefeicao < ApplicationRecord
+end

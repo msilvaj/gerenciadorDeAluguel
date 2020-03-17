@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_171136) do
+ActiveRecord::Schema.define(version: 2020_03_17_231115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dietas", force: :cascade do |t|
+    t.date "dataInicio"
+    t.date "dataFinal"
+    t.bigint "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_dietas_on_usuario_id"
+  end
+
+  create_table "refeicoes", force: :cascade do |t|
+    t.time "horario"
+    t.text "descricao"
+    t.bigint "trefeicao_id"
+    t.bigint "dieta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dieta_id"], name: "index_refeicoes_on_dieta_id"
+    t.index ["trefeicao_id"], name: "index_refeicoes_on_trefeicao_id"
+  end
+
+  create_table "trefeicoes", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.boolean "admin"
@@ -32,4 +58,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_171136) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dietas", "usuarios"
+  add_foreign_key "refeicoes", "dietas"
+  add_foreign_key "refeicoes", "trefeicoes"
 end

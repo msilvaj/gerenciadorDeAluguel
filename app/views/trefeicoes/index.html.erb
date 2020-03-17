@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trefeicoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trefeicoes.each do |trefeicao| %>
+      <tr>
+        <td><%= trefeicao.nome %></td>
+        <td><%= link_to 'Show', trefeicao %></td>
+        <td><%= link_to 'Edit', edit_trefeicao_path(trefeicao) %></td>
+        <td><%= link_to 'Destroy', trefeicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trefeicao', new_trefeicao_path %>

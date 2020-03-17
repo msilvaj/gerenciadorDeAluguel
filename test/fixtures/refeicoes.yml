@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horario: 2020-03-17 20:11:15
+  descricao: MyText
+  trefeicao: one
+  dieta: one
+
+two:
+  horario: 2020-03-17 20:11:15
+  descricao: MyText
+  trefeicao: two
+  dieta: two
