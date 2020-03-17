@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dataInicio: 2020-03-17
+  dataFinal: 2020-03-17
+  usuario: one
+
+two:
+  dataInicio: 2020-03-17
+  dataFinal: 2020-03-17
+  usuario: two

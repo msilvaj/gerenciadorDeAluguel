@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dietas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datainicio</th>
+      <th>Datafinal</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dietas.each do |dieta| %>
+      <tr>
+        <td><%= dieta.dataInicio %></td>
+        <td><%= dieta.dataFinal %></td>
+        <td><%= dieta.usuario %></td>
+        <td><%= link_to 'Show', dieta %></td>
+        <td><%= link_to 'Edit', edit_dieta_path(dieta) %></td>
+        <td><%= link_to 'Destroy', dieta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dieta', new_dieta_path %>
