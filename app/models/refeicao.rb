@@ -1,4 +1,4 @@
 class Refeicao < ApplicationRecord
-  belongs_to :trefeicao
+  has_one :trefeicao
   belongs_to :dieta
 end
