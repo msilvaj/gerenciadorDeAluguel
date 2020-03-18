@@ -204,7 +204,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.1.5)
+  bootsnap
   byebug
   cancancan
   capybara (>= 2.15)

@@ -3,11 +3,11 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-	if user.admin?
+  def initialize(usuario)
+	if !usuario.present?
 	  can :manage, :all
 	else
-			can :manage, Dieta, user_id: user.id
+			can :manage, Usuario, user_id: usuario.id
 	end
     # Define abilities for the passed in user here. For example:
     #
