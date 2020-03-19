@@ -1,15 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :authenticate_usuario!
 
   load_and_authorize_resource :object, :find_by => :id
-  before_action :authenticate_usuario!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def current_user
     @current_user ||= session[:current_usuario_id] && Usuario.find_by_id(session[:current_usuario_id])
   end
 
-  alias_method :current_user, :current_usuario 
+  alias_method :current_user, :current_usuario
 
   def current_ability
     @current_ability ||= Ability.new(current_user)

@@ -4,11 +4,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-   #usuario ||= Usuario.new # guest user (not logged in)
-   if user.admin?
-     can :manage, :all
-   else
-     can :manage Dieta, usuario_id: user.id
+   user ||= Usuario.new # guest user (not logged in)
+   can :read, :all # permissions for every user, even if not logged in
+   if Usuario.exists?(user.id)
+     can :manage, Dieta, usuario_id: user.id
    end
   end
 end
