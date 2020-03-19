@@ -1,24 +1,38 @@
-# README
+To run this app clone or download it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This needs the following techologies to run:
 
-Things you may want to cover:
+Rails 5.2.4
+Ruby 2.6.3
+Postgres 11.5
 
-* Ruby version
 
-* System dependencies
+To run this application do the following:
 
-* Configuration
+Access the directory with the project
 
-* Database creation
+Run the command:
 
-* Database initialization
+$bundle install
 
-* How to run the test suite
+After, you need configure your database connection
 
-* Services (job queues, cache servers, search engines, etc.)
+access the file 
 
-* Deployment instructions
+config/database.yml
 
-* ...
+and put your database user and password.
+
+After all, you need create and configure the database. So, type the commands:
+
+$rails db:create
+
+$rails db:migrate
+
+$rails db:seed
+
+And to run the application, run:
+
+$rails s
+
+
