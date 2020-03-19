@@ -4,11 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(usuario)
-	if !usuario.present?
-	  can :manage, :all
-	else
-			can :manage, Usuario, user_id: usuario.id
-	end
+   usuario ||= Usuario.new # guest user (not logged in)
+   if usuario.admin?
+     can :manage, :all
+   else
+     can :read, :all
+   end
+
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

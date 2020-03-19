@@ -17,7 +17,7 @@
       <tr>
         <td><%= dieta.dataInicio %></td>
         <td><%= dieta.dataFinal %></td>
-        <td><%= dieta.usuario %></td>
+        <td><%= dieta.usuario.nome   %></td>
         <td><%= link_to 'Show', dieta %></td>
         <td><%= link_to 'Edit', edit_dieta_path(dieta) %></td>
         <td><%= link_to 'Destroy', dieta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
