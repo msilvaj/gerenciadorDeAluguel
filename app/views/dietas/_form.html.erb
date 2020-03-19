@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :dataInicio %>
+    <%= form.label "Data Inicial" %>
     <%= form.date_select :dataInicio %>
   </div>
 
   <div class="field">
-    <%= form.label :dataFinal %>
+    <%= form.label "Data Final" %>
     <%= form.date_select :dataFinal %>
   </div>
 
   <div class="field">
     <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id %>
+    <%= form.text_field :usuario_id ,:readonly => true%>
   </div>
 
   <div class="actions">
