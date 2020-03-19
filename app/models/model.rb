@@ -1,9 +1,4 @@
-class Usuario < ApplicationRecord
-  has_one :dieta
-    validates :nome, presence: true
-    validates :peso, presence: true
-    validates :pesoIdeal, presence: true
-    validates :altura, presence: true
+class Model < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

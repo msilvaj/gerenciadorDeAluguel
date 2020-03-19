@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Criando Tipos de Refeicao"
+Trefeicao.create(nome: "Café da Manhã")
+Trefeicao.create(nome: "Lanche")
+Trefeicao.create(nome: "Almoço")
+Trefeicao.create(nome: "Jantar")
+Trefeicao.create(nome: "Ceia")

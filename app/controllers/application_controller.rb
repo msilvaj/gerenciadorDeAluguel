@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   load_and_authorize_resource :object, :find_by => :id
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to '/', :alert => exception.message
+  end
+
   def current_user
     @current_user ||= session[:current_usuario_id] && Usuario.find_by_id(session[:current_usuario_id])
   end

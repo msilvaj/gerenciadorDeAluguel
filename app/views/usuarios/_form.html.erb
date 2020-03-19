@@ -35,7 +35,9 @@
     <%= form.label :altura %>
     <%= form.text_field :altura %>
   </div>
-
+<%= f.fields_for :dieta do |dieta_form|%>
+  <%= render "dieta_fields", f: dietas_form %>
+<% end %>
   <div class="actions">
     <%= form.submit %>
   </div>

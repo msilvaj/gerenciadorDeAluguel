@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if can? :manage, Dieta %>
 <p>
   <strong>Datainicio:</strong>
   <%= @dieta.dataInicio %>
@@ -14,6 +14,6 @@
   <strong>Usuario:</strong>
   <%= @dieta.usuario.nome %>
 </p>
-
+<% end %>
 <%= link_to 'Edit', edit_dieta_path(@dieta) %> |
 <%= link_to 'Back', dietas_path %>

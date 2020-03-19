@@ -1,13 +1,17 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
-  
 
-  # GET /usuarios
-  # GET /usuarios.json
   def index
-    @usuarios = @current_user
+    @usuario = @current_usuario
   end
 
+  def mostra_dieta(usuario)
+    usuario.dieta
+  end
+
+  def create_dieta (usuario)
+    Dieta.create(usuario_id: usuario.id)
+  end
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
@@ -20,6 +24,7 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+    @usuario = @current_usuario
   end
 
   # POST /usuarios
@@ -70,6 +75,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:admin, :nome, :peso, :pesoIdeal, :altura)
+      params.require(:usuario).permit(:admin, :nome, :peso, :pesoIdeal, :altura, :dieta)
     end
 end
