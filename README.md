@@ -1,6 +1,6 @@
 To run this app clone or download it.
 
-This needs the following techologies to run:
+You need the following techologies to execute this project:
 
 Rails 5.2.4
 Ruby 2.6.3
